@@ -1,0 +1,33 @@
+<h3>[]Lista de centros educativos[]</h3>
+<hr>
+
+<div *ngIf="centroSeleccionado">
+  <h4>Centro Seleccionado</h4>
+  <p>Nombre: {{ centroSeleccionado.nombre }}</p>
+  <p>Localidad: {{ centroSeleccionado.localidad }}</p>
+  <p>Familias profesionales: {{ centroSeleccionado.familiasProfesionales}}</p>
+  <p>Centro: {{ centroSeleccionado.centro }}</p>
+</div>
+
+
+  <div *ngIf="puedeRetroceder">
+    <button class="btn btn-outline-primary" (click)="anteriorCentro()">Anterior</button>
+  </div>
+
+    <button class="btn btn-outline-danger" (click)="eliminarCentro()">Eliminar</button>
+    <button class="btn btn-outline-warning" (click)="insertarCentro()">Insertar</button>
+
+  <div *ngIf="puedeAvanzar">
+    <button class="btn btn-outline-success" (click)="posteriorCentro()">Posterior</button>
+  </div>
+
+
+<h4>Centros insertados</h4>
+<ul>
+  <li *ngFor="let centro of centrosEducativos">
+    <p>Nombre: {{ centro.nombre }}</p>
+    <p>Localidad: {{ centro.localidad }}</p>
+    <p>Familias profesionales: {{ centro.familiasProfesionales}}</p>
+    <p>Centro: {{ centro.centro }}</p>
+  </li>
+</ul>
