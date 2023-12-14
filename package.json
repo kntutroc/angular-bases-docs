@@ -9,8 +9,12 @@
     "delete:docs": "del docs",
     "copy:dist": "copyfiles dist/bases/* ./docs -f",
     "build:github": "npm run delete:docs && npm run build:href && npm run copy:dist",
+    "git:clone": "git clone https://github.com/kntutroc/angular-bases/",
+    "git:init": "git init",
+    "git:add":"git add .",
+    "git:commit": "git commit -m",
     "push:github":"git push origin master",
-    "upload:githubpages":"",
+    "pull:github": "git pull origin master",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
