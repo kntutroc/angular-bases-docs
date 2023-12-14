@@ -2,6 +2,11 @@
 <hr>
 
 <div class="row">
-  <app-main-page-lista></app-main-page-lista>
-  <app-main-page-addPersonaje></app-main-page-addPersonaje>
+  <div class="col">
+    <app-main-page-lista [miLista]="personajes" (onEliminarPersonaje)="eliminarPersonaje($event)"></app-main-page-lista>
+</div>
+
+  <div class="col">
+    <app-main-page-addPersonaje></app-main-page-addPersonaje>
+  </div>
 </div>

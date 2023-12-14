@@ -1,7 +1,28 @@
-<div class="col">
-  <h4>Listado</h4>
-  <ul class="list-group">
-      <li class="list-group-item">Goku - 10000</li>
-      <li class="list-group-item">Yamsha - 500</li>
-  </ul>
-</div>
+<h4>Listado</h4>
+<ul class="list-group">
+  <li *ngFor="let personaje of listaPersonajes; let i=index; let esPar=even; let esUltimo=last; let esPrimero=first"
+    class="list-group-item"
+
+    [ngClass]="{
+      'list-group-item-primary': esPrimero,
+      'list-group-item-secondary': esPar,
+      'list-group-item-danger': esUltimo
+    }">
+
+    <div class="row">
+      <div class="col-1">
+        <span class="text-primary">{{ i + 1 }} </span>
+      </div>
+
+      <div class="col-8">
+        <span>{{ personaje.nombre }} </span>
+        <strong>Fuerza: </strong>
+        <span>{{ personaje.fuerza }} </span>
+      </div>
+
+      <div class="col-3">
+        <button class="btn btn-danger" (click)="eliminarPersonaje(personaje.id)">X</button>
+      </div>
+    </div>
+  </li>
+</ul>
